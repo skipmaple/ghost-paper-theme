@@ -11,3 +11,14 @@ import infiniteScroll from "./infiniteScroll";
 // Call the menu and infinite scroll functions
 menuOpen();
 infiniteScroll();
+
+// 获取回到顶部按钮
+const backToTopButton = document.getElementById('gh-foot-title-back');
+
+// 点击按钮时，平滑滚动到顶部
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 平滑滚动
+    });
+});
