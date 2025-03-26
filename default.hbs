@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{asset "built/index.css"}}" />
     <script src="{{asset "built/index.js"}}" defer></script>
 
+    {{!-- Fonts are preloaded and defined in the default template to avoid layout shift --}}
+    {{> "typography/fonts"}}
+
     <title>{{meta_title}}</title>
 
     {{ghost_head}}
@@ -17,7 +20,7 @@
 <div class="gh-viewport">
 
 <header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
+    <nav class="gh-head-inner">
 
         <div class="gh-head-brand">
             <a class="gh-head-logo" href="{{@site.url}}">
@@ -32,23 +35,29 @@
                     <div class="gh-burger-inner"></div>
                 </div>
             </a>
+
+            <button class="gh-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{search}}
-                {{#if @site.members_enabled}}
-                    {{^if @member}}
-                    <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
-                    {{else}}
-                    <a class="gh-button" href="#/portal/account">Account</a>
-                    {{/if}}
-                {{/if}}
-            </div>
-        </div>
+
     </nav>
+
+    <div class="gh-head-menu">
+        {{navigation}}
+    </div>
+
+    <sidebar class="gh-head-sidebar">
+        <ul>
+            <li><a href="/">{{ t "Home" }}</a></li>
+            <li><a href="/about">{{ t "About" }}</a></li>
+            <li><a href="/archive">{{ t "Archive" }}</a></li>
+        </ul>
+    </sidebar>
+
 </header>
 
 <main class="gh-main">
@@ -59,13 +68,47 @@
 </main>
 
 <footer class="gh-foot">
-    <div class="gh-container">
-        <div class="gh-foot-menu">
-            {{navigation type="secondary"}}
+    <div class="gh-foot-inner">
+        <div class="gh-foot-title">
+            <div class="gh-foot-title-text">{{ t "Contact" }}</div>
+            <button id="gh-foot-title-back" class="gh-foot-title-back">
+                <span>↑</span>
+                <span>{{ t "Back to top" }}</span>
+            </button>
         </div>
-        <div class="gh-foot-meta">
+
+        <div class="gh-foot-links">
+            <div class="gh-foot-links-row">
+                <div class="gh-foot-links-title">{{t "Email"}}</div>
+                <div class="gh-foot-links-link">
+                    <a href="mailto:{{@custom.contact_email}}">{{@custom.contact_email}}</a>
+                </div>
+            </div>
+
+            <div class="gh-foot-links-row">
+                <div class="gh-foot-links-title">{{t "Subscribe"}}</div>
+                <div class="gh-foot-links-link">
+                    <a href="mailto:{{@custom.contact_email}}">{{ t "Click here to subscribe" }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="gh-foot-baseline">
+            <div class="gh-foot-baseline-copyright">
+                {{#if @site.title}}
+                    {{@site.title}} &copy; {{date format="YYYY"}} 
+                {{else}}
+                    Ghost &copy; {{date format="YYYY"}}
+                {{/if}}
+            </div>
+
+            <div class="gh-foot-baseline-separator">|</div>
+            <div class="gh-foot-baseline-extra">Designed by DrewLee</div>
+        </div>
+
+        {{!-- <div class="gh-foot-meta">
             Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
+        </div> --}}
     </div>
 </footer>
 
