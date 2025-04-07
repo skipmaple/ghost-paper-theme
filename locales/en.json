@@ -36,5 +36,12 @@
     "About": "About",
     "Home": "Home",
     "Posts": "Posts",
-    "Archive": "Archive"
+    "Post": "Post",
+    "Archive": "Archive",
+    "Go to the front page →": "Go to the front page →",
+    "Page": "Page",
+    "Tag": "Tag",
+    "Tags": "Tags",
+    "Author": "Author",
+    "Error": "Error"
 }

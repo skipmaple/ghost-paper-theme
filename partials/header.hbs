@@ -1,0 +1,48 @@
+<nav class="gh-head-inner">
+
+    <div class="gh-head-brand">
+        <a class="gh-head-logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+            <img src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{else}}
+            {{@site.title}}
+            {{/if}}
+        </a>
+        <a class="gh-burger" role="button" aria-label="menu">
+            <div class="gh-burger-box">
+                <div class="gh-burger-inner"></div>
+            </div>
+        </a>
+
+        <button class="gh-menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+</nav>
+<div class="gh-head-links">
+    <div class="gh-head-links-toc">
+        {{#is "index"}}{{t "Home"}}{{/is}}
+        {{#is "post"}}{{t "Post"}}{{/is}}
+        {{#is "page"}}{{t "Page"}}{{/is}}
+        {{#is "tag"}}{{t "Tag"}}{{/is}}
+        {{#is "author"}}{{t "Author"}}{{/is}}
+        {{#is "error"}}{{t "Error"}}{{/is}}
+    </div>
+
+    <div class="gh-head-menu">
+        {{navigation}}
+    </div>
+</div>
+
+
+<sidebar class="gh-head-sidebar">
+    <ul>
+        <li><a href="/">{{ t "Home" }}</a></li>
+        <li><a href="/about">{{ t "About" }}</a></li>
+        <li><a href="/archive">{{ t "Archive" }}</a></li>
+    </ul>
+</sidebar>

@@ -8,17 +8,9 @@
 
 .gh-foot .gh-foot-inner {
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 24px;
 
     padding: 25px 0 60px 0;
-}
-
-@media (min-width: 64em) {
-    .gh-foot .gh-foot-inner {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
 }
 
 .gh-foot-title {
@@ -90,7 +82,7 @@
 
 .gh-foot-links-link a {
     text-decoration: none;
-    font-family:var(--font-sans);
+    font-family: var(--font-sans);
     font-weight: 700;
 }
 
@@ -100,6 +92,10 @@
     display: flex;
     line-height: 1.3;
     padding: 10px 0;
+}
+
+.gh-foot-baseline-separator {
+    margin: 0 10px;
 }
 
 .gh-foot-meta {
@@ -112,5 +108,12 @@
 @media (max-width: 700px) {
     .gh-foot-menu .nav {
         font-size: 1.6rem;
+    }
+}
+
+/* 桌面端 */
+@media (min-width: 1024px) {
+    .gh-foot .gh-foot-inner {
+        margin: 0 40px;
     }
 }

@@ -1,0 +1,38 @@
+<div class="gh-foot-inner">
+    <div class="gh-foot-title">
+        <div class="gh-foot-title-text">{{ t "Contact" }}</div>
+        <button id="gh-foot-title-back" class="gh-foot-title-back">
+            <span>↑</span>
+            <span>{{ t "Back to top" }}</span>
+        </button>
+    </div>
+
+    <div class="gh-foot-links">
+        <div class="gh-foot-links-row">
+            <div class="gh-foot-links-title">{{t "Email"}}</div>
+            <div class="gh-foot-links-link">
+                <a href="mailto:{{@custom.contact_email}}">{{@custom.contact_email}}</a>
+            </div>
+        </div>
+
+        <div class="gh-foot-links-row">
+            <div class="gh-foot-links-title">{{t "Subscribe"}}</div>
+            <div class="gh-foot-links-link">
+                <a href="mailto:{{@custom.contact_email}}">{{ t "Click here to subscribe" }}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="gh-foot-baseline">
+        <div class="gh-foot-baseline-copyright">
+            {{#if @site.title}}
+            {{@site.title}} &copy; {{date format="YYYY"}}
+            {{else}}
+            Ghost &copy; {{date format="YYYY"}}
+            {{/if}}
+        </div>
+
+        <div class="gh-foot-baseline-separator">|</div>
+        <div class="gh-foot-baseline-extra">Designed by DrewLee</div>
+    </div>
+</div>

@@ -14,6 +14,10 @@
     transition: transform 0.25s ease;
 }
 
+.gh-head.hidden {
+    transform: translateY(-100%); /* 向上隐藏header */
+}
+
 .gh-head a {
     color: inherit;
     text-decoration: none;
@@ -55,17 +59,23 @@
 }
 
 
+.gh-head-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    height: 30px;
+    padding: 0 24px;
+}
+
 /* Primary Navigation
 /* ---------------------------------------------------------- */
 
 .gh-head-menu {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    height: 30px;
-    padding: 0 40px;
+    height: 100%;
 }
 
 .gh-head-menu .nav {
@@ -324,17 +334,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     #gh-head .gh-head-actions a {
         margin: 0 10px;
     }
-
-    #gh-head .gh-head-menu {
-        padding: 0 24px;
-    }
-}
-
-@media (max-width: 600px) {
-    #gh-head .gh-head-menu {
-        font-size: 6vmin;
-        padding: 0 24px;
-    }
 }
 
 /* sidebar menu */
@@ -366,6 +365,14 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     transition: transform .3s .1s;
     width: calc(100% + 1px);
     z-index: 999;
+
+    border-left: 1px solid #000;
+    height: calc(100% - 110px);
+    width: 461px;
+}
+
+.gh-head-sidebar ul {
+    justify-content: center;
 }
 
 .gh-head-open {
@@ -376,15 +383,27 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     transform: translateX(0);
 }
 
-@media (min-width: 45em) {
+/* 移动端 */
+@media (max-width: 767px) {
+    /* 手机样式 */
     .gh-head-sidebar {
-        border-left: 1px solid #000;
-        height: calc(100% - 110px);
-        width: 461px;
-        padding: 60px;
+        width: 100% !important;
     }
 
     .gh-head-sidebar ul {
-        justify-content: center;
+        justify-content: start;
     }
+}
+
+/* 桌面端 */
+@media (min-width: 1024px) {
+    /* 桌面样式 */
+    .gh-head-links {
+        padding: 0 40px;
+    }
+
+    .gh-head-sidebar {
+        padding: 60px;
+    }
+
 }

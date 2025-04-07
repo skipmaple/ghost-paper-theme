@@ -36,6 +36,13 @@
     "About": "关于",
     "Home": "主页",
     "Posts": "文章",
-    "Archive": "归档"
+    "Post": "文章",
+    "Archive": "归档",
+    "Go to the front page →": "转到前页 →",
+    "Page": "页面",
+    "Tag": "标签",
+    "Tags": "标签",
+    "Author": "作者",
+    "Error": "错误"
 
 }
