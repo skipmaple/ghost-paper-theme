@@ -112,7 +112,8 @@
     text-align: center;
 }
 
-.gh-head-menu .nav-current a {
+.gh-head-menu .nav-current a,
+.gh-head-menu .nav a:hover {
     /* box-shadow: 0 -1px 0 0 currentcolor inset; */
     background-color: #f4d06f;
 }

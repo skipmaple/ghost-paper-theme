@@ -25,7 +25,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "ghost/pagination.css";
 @import "ghost/comments.css";
 
-
+/* Custom added */
+@import "ghost/tagcard.css";
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
@@ -45,7 +46,7 @@ html,
 }
 
 .gh-page {
-    padding: 0 4vmin;
+    padding: 0 24px;
 }
 
 .gh-article {

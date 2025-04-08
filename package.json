@@ -18,8 +18,8 @@
         "pretest": "npm run build"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
+        "name": "Drew Lee",
+        "email": "skipmaple@gmail.com",
         "url": "https://ghost.org"
     },
     "gpm": {

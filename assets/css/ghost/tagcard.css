@@ -1,0 +1,92 @@
+.gh-tags-mobile {
+    display: grid;
+    row-gap: 25px;
+}
+
+.gh-tag-card {
+    display: grid !important;
+    grid-template-rows: 45vh auto;
+    grid-template-columns: 40px 1fr;
+    height: auto;
+}
+
+.gh-tag-card-name-bar {
+    background-color: #f4d06f;
+    border-color: #4c3906;
+    color: #4c3906;
+    border-left: 1px solid var(--color-border);
+    padding: 10px;
+}
+
+.gh-tag-card-name-bar-text {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    letter-spacing: 2.5px;
+    /* transform: rotate(90deg); */
+    text-wrap: nowrap;
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: vertical-lr;
+}
+
+.gh-tag-card-image {
+    grid-area: 1 / 2 / 1 / 2;
+    position: relative;
+}
+
+.gh-tag-card-image-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    -o-object-fit: cover;
+    overflow: hidden;
+}
+
+.gh-tag-card-link {
+    align-self: self-end;
+    background-color: #fff7f4;
+    font-family: var(--font-mono);
+    grid-area: 1 / 2 / 1 / 2;
+    height: max-content;
+    justify-self: end;
+    padding: 13px 15px;
+    width: max-content;
+    z-index: 1;
+
+    background-color: #f4d06f;
+    color: #4c3906;
+}
+
+.gh-tag-card-desc {
+    background-color: #121212;
+    color: #fff7f4;
+    grid-column: span 2;
+    padding: 15px;
+
+    background-color: #4c3906;
+    color: #f4d06f;
+}
+
+.gh-tag-card-desc-title {
+    border-bottom: 1px solid;
+    border-color: #fff7f4;
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+    border-color: #f4d06f;
+}
+
+.gh-tag-card-desc-content {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
