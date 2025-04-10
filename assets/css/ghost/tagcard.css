@@ -1,4 +1,4 @@
-.gh-tags-mobile {
+.gh-tags {
     display: grid;
     row-gap: 25px;
 }
@@ -11,9 +11,9 @@
 }
 
 .gh-tag-card-name-bar {
-    background-color: #f4d06f;
-    border-color: #4c3906;
-    color: #4c3906;
+    background-color: #fff7f4;
+    border-color: #121212;
+    color: #121212;
     border-left: 1px solid var(--color-border);
     padding: 10px;
 }
@@ -58,9 +58,6 @@
     padding: 13px 15px;
     width: max-content;
     z-index: 1;
-
-    background-color: #f4d06f;
-    color: #4c3906;
 }
 
 .gh-tag-card-desc {
@@ -68,9 +65,6 @@
     color: #fff7f4;
     grid-column: span 2;
     padding: 15px;
-
-    background-color: #4c3906;
-    color: #f4d06f;
 }
 
 .gh-tag-card-desc-title {
@@ -81,12 +75,15 @@
     line-height: 1.25;
     margin-bottom: 10px;
     padding-bottom: 5px;
-
-    border-color: #f4d06f;
 }
 
 .gh-tag-card-desc-content {
     font-family: var(--font-sans);
     font-size: 1.5rem;
     line-height: 1.5;
+}
+
+/* 桌面端 */
+@media (min-width: 1024px) {
+    
 }

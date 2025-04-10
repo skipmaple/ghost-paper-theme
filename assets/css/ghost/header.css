@@ -26,7 +26,7 @@
 .gh-head-inner {
     display: flex;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 24px;
 }
 
 
@@ -301,12 +301,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         overflow: hidden;
     }
 
-    #gh-head .gh-head-inner {
-        height: 100%;
-        grid-template-columns: 1fr;
-        padding: 0 24px;
-    }
-
     #gh-head .gh-head-brand {
         position: relative;
         z-index: 10;
@@ -399,6 +393,10 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 /* 桌面端 */
 @media (min-width: 1024px) {
     /* 桌面样式 */
+    .gh-head-inner {
+        padding: 0 40px;
+    }
+
     .gh-head-links {
         padding: 0 40px;
     }
