@@ -1,40 +1,80 @@
 {{!< default}}
 
 <div class="gh-page">
-    <div class="gh-container gh-tags-page">
+    <div class="gh-tags-page">
         <div class="gh-tags">
-            {{#get "tags" limit="all"}}
-            {{#foreach tags}}
-                <div class="gh-tag-card gh-tag-card-color-politics">
-                    <a href="{{url}}" class="gh-tag-card-name-bar">
-                        <div class="gh-tag-card-name-bar-text">{{name}}</div>
-                    </a>
+            <div class="gh-tags-mobile">
+                {{#get "tags" limit="all"}}
+                    {{#foreach tags}}
+                        <div class="gh-tag-card gh-tag-card-color-politics">
+                            <a href="{{url}}" class="gh-tag-card-name-bar">
+                                <h1 class="gh-tag-card-name-bar-text">{{name}}</h1>
+                            </a>
 
-                    <a href="{{url}}" class="gh-tag-card-image">
-                        {{#if feature_image}}
-                            <img src="{{feature_image}}" alt="{{name}}" class="gh-tag-card-image-img" />
-                        {{else}}
-                            <img src="{{@site.cover}}" alt="{{name}}" class="gh-tag-card-image-img" />
-                        {{/if}}
-                    </a>
+                            <a href="{{url}}" class="gh-tag-card-image">
+                                {{#if feature_image}}
+                                    <img src="{{feature_image}}" alt="{{name}}" class="gh-tag-card-image-img" />
+                                {{else}}
+                                    <img src="{{@site.cover}}" alt="{{name}}" class="gh-tag-card-image-img" />
+                                {{/if}}
+                            </a>
 
-                    <a href="{{url}}" class="gh-tag-card-link">{{t "View all posts"}}</a>
+                            <a href="{{url}}" class="gh-tag-card-link">{{t "View all posts"}}</a>
 
-                    <div class="gh-tag-card-desc">
-                        <div class="gh-tag-card-desc-title">{{t "Description"}}</div>
-                        <div class="gh-tag-card-desc-content">
-                            {{#if description}}
-                                {{description}}
-                            {{else}}
-                                {{name}}
-                            {{/if}}
+                            <div class="gh-tag-card-desc">
+                                <div class="gh-tag-card-desc-title">{{t "Description"}}</div>
+                                <div class="gh-tag-card-desc-content">
+                                    {{#if description}}
+                                        {{description}}
+                                    {{else}}
+                                        {{name}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        
                         </div>
-                    </div>
-                
+                    {{/foreach}}
+                {{/get}}
+            </div>
+
+            <div class="swiper gh-tags-swiper gh-tags-desktop">
+                <div class="swiper-wrapper">
+                    {{#get "tags" limit="all"}}
+                    {{#foreach tags}}
+                        <div class="swiper-slide">
+                            <div class="gh-tag-card gh-tag-card-color-politics">
+                                <a href="{{url}}" class="gh-tag-card-name-bar">
+                                    <h1 class="gh-tag-card-name-bar-text">{{name}}</h1>
+                                </a>
+
+                                <a href="{{url}}" class="gh-tag-card-image">
+                                    {{#if feature_image}}
+                                        <img src="{{feature_image}}" alt="{{name}}" class="gh-tag-card-image-img" />
+                                    {{else}}
+                                        <img src="{{@site.cover}}" alt="{{name}}" class="gh-tag-card-image-img" />
+                                    {{/if}}
+                                </a>
+
+                                <a href="{{url}}" class="gh-tag-card-link">{{t "View all posts"}}</a>
+
+                                <div class="gh-tag-card-desc">
+                                    <div class="gh-tag-card-desc-title">{{t "Description"}}</div>
+                                    <div class="gh-tag-card-desc-content">
+                                        {{#if description}}
+                                            {{description}}
+                                        {{else}}
+                                            {{name}}
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    {{/foreach}}
+                    {{/get}}
                 </div>
-            
-            {{/foreach}}
-            {{/get}}
+            </div>
+
         </div>
     </div>
 </div>
