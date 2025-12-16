@@ -109,22 +109,23 @@ const swiper = new Swiper ('.gh-tags-swiper', {
 // Add custom wheel event listener
 const swiperContainer = document.querySelector(".gh-tags-swiper");
 
-swiperContainer.addEventListener("wheel", (event) => {
-  const deltaY = event.deltaY;
+if (swiperContainer) {
+  swiperContainer.addEventListener("wheel", (event) => {
+    const deltaY = event.deltaY;
 
-  // Check if Swiper is at the beginning or end
-  const isAtStart = swiper.isBeginning && deltaY < 0; // Scrolling up at the start
-  const isAtEnd = swiper.isEnd && deltaY > 0; // Scrolling down at the end
+    // Check if Swiper is at the beginning or end
+    const isAtStart = swiper.isBeginning && deltaY < 0; // Scrolling up at the start
+    const isAtEnd = swiper.isEnd && deltaY > 0; // Scrolling down at the end
 
-
-  if (isAtStart || isAtEnd) {
-    // Allow vertical scrolling
-    document.body.style.overflowY = "auto";
-    window.scrollBy({ top: deltaY });
-  } else {
-    // Prevent vertical scrolling and scroll Swiper horizontally
-    event.preventDefault();
-    document.body.style.overflowY = "hidden";
-    swiperContainer.scrollLeft += deltaY; // Scroll horizontally
-  }
-});
+    if (isAtStart || isAtEnd) {
+      // Allow vertical scrolling
+      document.body.style.overflowY = "auto";
+      window.scrollBy({ top: deltaY });
+    } else {
+      // Prevent vertical scrolling and scroll Swiper horizontally
+      event.preventDefault();
+      document.body.style.overflowY = "hidden";
+      swiperContainer.scrollLeft += deltaY; // Scroll horizontally
+    }
+  });
+}
